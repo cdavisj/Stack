@@ -51,7 +51,7 @@ public:
 			// begin curr at head
 			curr = head;
 
-			// loop through list incrementing counter
+			// loop through stack incrementing counter
 			while (curr != nullptr)
 			{
 				// increment counter
@@ -67,13 +67,13 @@ public:
 	}
 
 	// return reference to top of stack (back most item)
-	data_type& top() // same as back in list
+	data_type& top()
 	{
 		return tail->data;
 	}
 
 	// push item onto back of stack
-	void push(data_type new_data) // same logic as push_back in list
+	void push(data_type new_data)
 	{
 		// create new node
 		curr = new node;
@@ -104,17 +104,17 @@ public:
 	}
 
 	// pop item from back of stack
-	data_type pop() // same logic as pop_back from list
+	data_type pop()
 	{
 		if (empty())
 		{
 			// print error message
-			std::cout << "Error: Cannot pop_back. List is empty.\n";
+			std::cout << "Error: Cannot pop. Stack is empty.\n";
 
 			// return empty data_type
 			return data_type();
 		}
-		else if (head == tail) // only one node in list
+		else if (head == tail) // only one node in stack
 		{
 			// create variable for data to be removed
 			data_type removed_data = tail->data;
@@ -128,7 +128,7 @@ public:
 			// return value of data removed
 			return removed_data;
 		}
-		else // more than one node in list
+		else // more than one node in stack
 		{
 			// create variable for data to be removed
 			data_type removed_data = tail->data;
@@ -160,12 +160,12 @@ public:
 
 			return;
 		}
-		else // list has items
+		else // stack has items
 		{
 			// begin curr at head
 			curr = head;
 
-			// loop through list
+			// loop through stack
 			while (curr != nullptr)
 			{
 				// display curr data
